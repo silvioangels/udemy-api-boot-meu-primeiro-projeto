@@ -1,0 +1,21 @@
+# Created on 2018-06-30T15:41:35.937
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: DEFAULT
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created on 2018-06-30T15:41:35.940
+Unexpected IOException: 5,1,com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests,contextLoads(com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests),null,null,null
+
+
+# Created on 2018-06-30T15:41:36.106
+Unexpected IOException: 6,1,com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests,contextLoads(com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests),null,null,null
+
+
+# Created on 2018-06-30T15:41:36.107
+Unexpected IOException: 2,1,org.apache.maven.surefire.junit4.JUnit4Provider,com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests,null,null,null
+
+

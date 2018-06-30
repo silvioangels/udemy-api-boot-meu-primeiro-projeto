@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.887 s - in com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests
