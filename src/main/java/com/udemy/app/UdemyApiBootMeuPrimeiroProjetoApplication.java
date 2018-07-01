@@ -12,13 +12,17 @@ import org.springframework.context.annotation.Bean;
 
 import com.udemy.app.entities.Empresa;
 import com.udemy.app.repositories.EmpresaRepository;
+import com.udemy.app.services.ExemploService;
 import com.udemy.app.utils.SenhaUtils;
 
 @SpringBootApplication
 public class UdemyApiBootMeuPrimeiroProjetoApplication {
 	
 	@Autowired
-	private EmpresaRepository empresaRepository;	
+	private EmpresaRepository empresaRepository;
+	
+	@Autowired
+	private ExemploService exemploService; 
 	
 	@Value("${paginacao.qtd_por_pagina}")
 	private int qtdPorPagina;
@@ -76,6 +80,12 @@ public class UdemyApiBootMeuPrimeiroProjetoApplication {
 			empresas = empresaRepository.findAll();
 			System.out.println("---->Empresas: " + empresas.size());
 			System.out.println("###############################################################");
+			
+			System.out.println("###############################################################");
+			System.out.println("### EXEMPLO SERVICE");
+			this.exemploService.testarServico();
+			System.out.println("###############################################################");
+			
 		};
 	}
 	
