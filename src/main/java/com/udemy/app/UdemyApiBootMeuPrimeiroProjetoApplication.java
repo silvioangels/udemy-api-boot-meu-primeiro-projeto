@@ -48,16 +48,22 @@ public class UdemyApiBootMeuPrimeiroProjetoApplication {
 			
 			System.out.println("###############################################################");
 			System.out.println("### EXEMPLO JPAREPOSITORY");
+			
+			
+			List<Empresa> empresas = empresaRepository.findAll();
+			empresas.forEach(System.out::println);
+			
+			this.empresaRepository.deleteAll();
+			
 			Empresa empresa = new Empresa();
 			empresa.setRazaoSocial("Kazale IT");
 			empresa.setCnpj("74645215000104");
 			
 			this.empresaRepository.save(empresa);
-
-			List<Empresa> empresas = empresaRepository.findAll();
+			empresas = empresaRepository.findAll();
 			empresas.forEach(System.out::println);
 			
-			Optional<Empresa> empresaDb = empresaRepository.findById(1L);
+			Optional<Empresa> empresaDb = empresaRepository.findById(empresa.getId());
 			System.out.println("---->Empresa por ID: " + empresaDb);
 			
 			empresaDb.get().setRazaoSocial("Kazale IT Web");
@@ -66,7 +72,7 @@ public class UdemyApiBootMeuPrimeiroProjetoApplication {
 			Empresa empresaCnpj = empresaRepository.findByCnpj("74645215000104");
 			System.out.println("---->Empresa por CNPJ: " + empresaCnpj);
 			
-			this.empresaRepository.deleteById(1L);
+			this.empresaRepository.deleteById(empresaCnpj.getId());
 			empresas = empresaRepository.findAll();
 			System.out.println("---->Empresas: " + empresas.size());
 			System.out.println("###############################################################");

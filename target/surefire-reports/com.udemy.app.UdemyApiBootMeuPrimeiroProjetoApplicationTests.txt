@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.887 s - in com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 11.913 s <<< FAILURE! - in com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests
+contextLoads(com.udemy.app.UdemyApiBootMeuPrimeiroProjetoApplicationTests)  Time elapsed: 0.005 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+Caused by: org.springframework.dao.InvalidDataAccessResourceUsageException: error performing isolated work; SQL [n/a]; nested exception is org.hibernate.exception.SQLGrammarException: error performing isolated work
+Caused by: org.hibernate.exception.SQLGrammarException: error performing isolated work
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'flyway.hibernate_sequence' doesn't exist
+

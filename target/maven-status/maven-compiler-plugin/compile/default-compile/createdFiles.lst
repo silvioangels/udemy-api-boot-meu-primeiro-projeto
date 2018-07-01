@@ -1,1 +1,8 @@
+com\udemy\app\enums\TipoEnum.class
 com\udemy\app\UdemyApiBootMeuPrimeiroProjetoApplication.class
+com\udemy\app\enums\PerfilEnum.class
+com\udemy\app\repositories\EmpresaRepository.class
+com\udemy\app\entities\Lancamento.class
+com\udemy\app\utils\SenhaUtils.class
+com\udemy\app\entities\Empresa.class
+com\udemy\app\entities\Funcionario.class
