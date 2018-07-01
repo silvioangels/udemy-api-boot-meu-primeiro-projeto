@@ -3,5 +3,10 @@ jdk:
   - oraclejdk8
 before_install:
   - chmod +x mvnw
-services:
-  - mysql
+env:
+  - DB=mysql
+mysql: &mysql
+  adapter: mysql2
+  username: root
+  password:
+  database: flyway
