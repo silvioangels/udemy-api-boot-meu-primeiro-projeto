@@ -8,21 +8,27 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 
 import com.udemy.app.entities.Empresa;
 import com.udemy.app.repositories.EmpresaRepository;
+import com.udemy.app.services.ExemploCacheService;
 import com.udemy.app.services.ExemploService;
 import com.udemy.app.utils.SenhaUtils;
 
 @SpringBootApplication
+@EnableCaching
 public class UdemyApiBootMeuPrimeiroProjetoApplication {
 	
 	@Autowired
 	private EmpresaRepository empresaRepository;
 	
 	@Autowired
-	private ExemploService exemploService; 
+	private ExemploService exemploService;
+	
+	@Autowired
+	private ExemploCacheService exemploCacheService;
 	
 	@Value("${paginacao.qtd_por_pagina}")
 	private int qtdPorPagina;
@@ -84,6 +90,15 @@ public class UdemyApiBootMeuPrimeiroProjetoApplication {
 			System.out.println("###############################################################");
 			System.out.println("### EXEMPLO SERVICE");
 			this.exemploService.testarServico();
+			System.out.println("###############################################################");
+			
+			System.out.println("###############################################################");
+			System.out.println("### EXEMPLO CACHE");
+			System.out.println("Executando serviço pela primeira vez: ");
+			System.out.println(this.exemploCacheService.exemploCache());
+			
+			System.out.println("Executando serviço pela segunda vez, deve obter dados do cache: ");
+			System.out.println(this.exemploCacheService.exemploCache());
 			System.out.println("###############################################################");
 			
 		};
